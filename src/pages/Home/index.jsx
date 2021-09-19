@@ -4,9 +4,10 @@ import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 
 import { Container, Search, Logo, Wrapper, Carousel, CarouselTitle } from './styles';
-import { ImageCard } from '../../components/ImageCard';
-import { RestaurantCard } from '../../components/RestaurantCard';
-import { Modal } from '../../components/Modal';
+import ImageCard from '../../components/ImageCard';
+import RestaurantCard from '../../components/RestaurantCard';
+import Modal from '../../components/Modal';
+import Map from '../../components/Map';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
@@ -36,8 +37,9 @@ const Home = () => {
           </Carousel>
         </Search>
         <RestaurantCard />
+        <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
       </Container>
-      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
+      <Map />
     </Wrapper>
   );
 };

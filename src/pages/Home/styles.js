@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
 `;
 
 export const Container = styled.aside`
