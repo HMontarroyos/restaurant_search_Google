@@ -1,7 +1,7 @@
 // TODO: Mudar para Variaveis do Css
 
 const theme = {
-  color: {
+  colors: {
     primary: '#6200ee',
     background: '#00000014',
     text: '#000000B3',
