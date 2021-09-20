@@ -12,6 +12,7 @@ import Map from '../../components/Map';
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [modalOpened, setModalOpened] = useState(false);
+  const [query, setQuery] = useState(null);
   const settings = {
     dots: false,
     infinite: true,
@@ -20,6 +21,13 @@ const Home = () => {
     slidesToScroll: 4,
     adaptiveHeight: true,
   };
+
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      setQuery(inputValue);
+    }
+  }
+
   return (
     <Wrapper>
       <Container>
@@ -29,7 +37,12 @@ const Home = () => {
             outlined
             label="Pesquisar Restaurantes"
             trailingIcon={<MaterialIcon role="button" icon="search" />}>
-            <Input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <Input
+              type="text"
+              value={inputValue}
+              onKeyPress={handleKeyPress}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
           </TextField>
           <CarouselTitle>Na sua Área</CarouselTitle>
           <Carousel {...settings}>
@@ -39,7 +52,7 @@ const Home = () => {
         <RestaurantCard />
         <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)} />
       </Container>
-      <Map />
+      <Map query={query} />
     </Wrapper>
   );
 };
