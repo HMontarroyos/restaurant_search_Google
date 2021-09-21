@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
-import { setRestaurants } from '../../redux/modules/restaurants';
+import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants';
 
 export const MapContainer = (props) => {
   const dispatch = useDispatch();
@@ -16,9 +16,30 @@ export const MapContainer = (props) => {
     }
   }, [query]);
 
+  useEffect(() => {
+    if (placeId) {
+      getRestaurantById(placeId);
+    }
+  }, [placeId]);
+
+  function getRestaurantById(placeId) {
+    const service = new google.maps.places.PlacesService(map);
+    dispatch(setRestaurant(null));
+    const request = {
+      placeId,
+      fields: ['name', 'opening_hours', 'formatted_address', 'formatted_phone_number'],
+    };
+
+    service.getDetails(request, (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurant(place));
+      }
+    });
+  }
+
   function searchbyQuery(query) {
     const service = new google.maps.places.PlacesService(map);
-
+    dispatch(setRestaurants([]));
     const request = {
       location: map.center,
       radius: '200',
@@ -35,7 +56,7 @@ export const MapContainer = (props) => {
 
   const searchNearby = (map, center) => {
     const service = new google.maps.places.PlacesService(map);
-
+    dispatch(setRestaurants([]));
     const request = {
       location: center,
       radius: '20000',
@@ -60,6 +81,7 @@ export const MapContainer = (props) => {
       centerAroundCurrentLocation
       onReady={onMapReady}
       onRecenter={onMapReady}
+      {...props}
       zoom={15}>
       {restaurants.map((restaurant) => (
         <Marker
