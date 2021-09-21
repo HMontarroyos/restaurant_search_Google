@@ -10,9 +10,22 @@ export const MapContainer = (props) => {
     const [map, setMap] = useState(null);
     const { google, query, placeId } = props;
 
+    useEffect(() => {
+        if (query) {
+            searchByQuery(query);
+        }
+    }, [query]);
+
+    useEffect(() => {
+        if (placeId) {
+            getRestaurantById(placeId);
+        }
+    }, [placeId]);
+
     function getRestaurantById(placeId) {
         const service = new google.maps.places.PlacesService(map);
         dispatch(setRestaurant(null));
+
         const request = {
             placeId,
             fields: ['name', 'opening_hours', 'formatted_address', 'formatted_phone_number'],
@@ -25,9 +38,10 @@ export const MapContainer = (props) => {
         });
     }
 
-    function searchbyQuery(query) {
+    function searchByQuery(query) {
         const service = new google.maps.places.PlacesService(map);
         dispatch(setRestaurants([]));
+
         const request = {
             location: map.center,
             radius: '200',
@@ -41,21 +55,11 @@ export const MapContainer = (props) => {
             }
         });
     }
-    useEffect(() => {
-        if (query) {
-            searchbyQuery(query);
-        }
-    }, [query]);
 
-    useEffect(() => {
-        if (placeId) {
-            getRestaurantById(placeId);
-        }
-    }, [placeId]);
-
-    const searchNearby = (map, center) => {
+    function searchNearby(map, center) {
         const service = new google.maps.places.PlacesService(map);
         dispatch(setRestaurants([]));
+
         const request = {
             location: center,
             radius: '20000',
@@ -67,7 +71,7 @@ export const MapContainer = (props) => {
                 dispatch(setRestaurants(results));
             }
         });
-    };
+    }
 
     function onMapReady(_, map) {
         setMap(map);
@@ -80,8 +84,7 @@ export const MapContainer = (props) => {
             centerAroundCurrentLocation
             onReady={onMapReady}
             onRecenter={onMapReady}
-            {...props}
-            zoom={15}>
+            {...props}>
             {restaurants.map((restaurant) => (
                 <Marker
                     key={restaurant.place_id}
