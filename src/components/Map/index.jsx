@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 
 import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants';
+import Modal from '../Modal';
 
 export const MapContainer = (props) => {
     const dispatch = useDispatch();
@@ -81,6 +82,10 @@ export const MapContainer = (props) => {
         searchNearby(map, map.center);
     }
 
+    function onModal() {
+        return console.log('TESTE');
+    }
+
     return (
         <Map
             google={google}
@@ -90,6 +95,7 @@ export const MapContainer = (props) => {
             {...props}>
             {restaurants.map((restaurant) => (
                 <Marker
+                    onClick={onModal}
                     key={restaurant.place_id}
                     name={restaurant.name}
                     position={{

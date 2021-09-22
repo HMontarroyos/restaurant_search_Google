@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Bootcamp Digital Inovation - Buscador de Restaurantes
 
-## Available Scripts
+Projeto Desenvolvido no Bootcamp Digital Inovation LocalizaLabs React Developer.
+É um projeto onde o usuário habilita sua localização e digita um estabelecimento ou determinada comida e o mesmo lista os restaurantes proximo a sua localidade passada.
+Este Projeto se usou dos Hooks do React juntamente com o consumo das APIs do Google Places e Google Maps api e para gerenciar os estados da aplicação foi utilizado o redux.
+Além de demais libs que estarei dando ênfase à algumas das muitas que foram utilizadas no projeto, com mais detalhes abaixo, sobre sua funcionalidade que colaborou com o desenvolvimento do projeto. Ao final do projeto foi feito seu Deploy no netlify.
 
-In the project directory, you can run:
+### Ferramentas Utilizadas na Criação do Projeto
+
+-   [Lottie Files](https://lottiefiles.com/).
+    O Lottie Files é uma biblioteca de animação leve e escalável.
+    Cada animação é baixada em Lottie que é um formato de arquivo de animação de código aberto em JSON, de alta qualidade, interativo e pode ser manipulado em tempo de execução na sua aplicação .
+
+-   [Styled Components ](https://styled-components.com/).
+    Styled-Components é uma biblioteca para React e React Native que permite usar estilos de nível de componente em seu aplicativo que são escritos com uma mistura de JavaScript e CSS usando uma técnica chamada CSS-in-JS.
+
+-   [React Slick ](https://react-slick.neostack.com/).
+    É uma lib para React para criar carroseis de imagens.
+    React slick é um componente de carrossel construído com React.
+
+-   [React Rating Stars](https://www.npmjs.com/package/react-rating-stars-component).
+    É uma lib para React para criar estrelas que podem ser usadas como avaliações em alguma aplicação.
+    React Rating Stars é um componente de avaliação construído com React.
+
+-   [Styled Reset ](https://www.npmjs.com/package/styled-reset).
+    É uma lib para React para zerar todos os estilos padrões do CSS que ficam por default nos navegadores.
+
+-   [Material UI](https://mui.com/pt/).
+    É uma biblioteca de estilos para React, personalizável e acessível de componentes básicos e avançados, com sua própria paleta de cores, permitindo que você construa seu próprio sistema de design e desenvolva aplicativos React com mais rapidez.
+    Nesse projeto utilizei em questão um componente dessa biblioteca que foi para criar o [componente de Pesquisar](https://www.npmjs.com/package/@material/react-text-field)
+
+-   [Google Maps React ](https://www.npmjs.com/package/google-maps-react).
+    É uma biblioteca que serve como auxiliar para envolver a API do Google maps e trabalhar com seus componentes já prontos em React no front de sua aplicação.
+
+-   [Editor Config ](https://editorconfig.org/).
+    [ESlint](https://eslint.org/).
+    Utilizei do ESlint como ferramenta para análise de código estática para identificar padrões problemáticos encontrados no código JavaScript em conjunto com o Editor Config para indentação padronizado do código.
+
+-   [Redux](https://redux.js.org/).
+    Redux é uma biblioteca JavaScript de código aberto para gerenciar o estado do aplicativo,
+    onde é utilizado para armazenamento de estados de aplicações utilizando da implementação do Flux, uma arquitetura criada pelo Facebook para contribuir com as aplicações de User Interface, utilizando o conceito de fluxo de dados unidirecional.
+
+-   [Netilfy](https://www.netlify.com/).
+    Plataforma rapida e escalavel para efetuar de forma agil o Deploy de sua aplicação além de que oferece hospedagem e serviços de back-end sem servidor para aplicativos da web e sites estáticos.
+
+## Como Rodar o Projeto ?
+
+Após Clonar o Projeto, já em sua maquina utilize o seguinte comando para baixar suas dependências.
+
+### `yarn`
+
+Para Baixar as Dependências do Projeto
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para Inicializar o Projeto
+Abrir [http://localhost:3000](http://localhost:3000) visualizar no Navegador.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Configurando as variáveis ambiente
 
-### `yarn test`
+Crie um Arquivo Chamado .env.local na sua pasta raiz do Projeto passando os parâmetros após ter criado uma conta no [Console Cloud Google](https://console.cloud.google.com/) e ter criado seu projeto lá.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`REACT_APP_GOOGLE_API_KEY=""`
 
-### `yarn build`
+## Criando uma conta no Console Cloud do Google e Inicializando um Projeto
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Após ter criado o Projeto você irá ter algumas opções porém para esta aplicação basta você escolher a opção Criar credenciais "Chave de API".
+E depois de criada você pode estar restringido ela ao seu uso pois só ira utilizar 2 apis do Google nesse projeto que são : Places API e Google Maps API
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Um breve resumo abaixo como fazer cada etapa :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Como Criar uma conta no Console Cloud e Iniciar um Projeto](https://support.google.com/cloudidentity/answer/7378726?hl=pt-BR)
 
-### `yarn eject`
+## Efetuando Deploy com Netilfy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Após ter criado uma conta no Netilfy e só escolher aonde esta hospedado o seu repositório do seu projeto selecionar o mesmo e após isso ir em configurações avançadas para passar a chave APIKYGOOGLE pois como a mesma não sobe para o repositório e necessário passar ela como variável local privada no Netilfy e após isso so clicar em Deploy e aguardar, após os teste se estiver tudo certo será gerado o link com o sua aplicação já hospedada no ar.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### link do Deploy no Netilfy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Restaurant Food Search](https://restaurant-food-search.netlify.app/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### 🚀 Let's code! 🚀
