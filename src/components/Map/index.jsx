@@ -3,14 +3,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+import { GoogleApiWrapper, Map } from 'google-maps-react';
 
 import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants';
-import Modal from '../Modal';
-
 export const MapContainer = (props) => {
     const dispatch = useDispatch();
-    const { restaurants } = useSelector((state) => state.restaurants);
+    /* const { restaurants } = useSelector((state) => state.restaurants); */
     const [map, setMap] = useState(null);
     const { google, query, placeId } = props;
 
