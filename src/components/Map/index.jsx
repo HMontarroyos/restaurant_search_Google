@@ -2,7 +2,7 @@
 /* eslint-disable no-use-before-define */
 
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch /*  useSelector  */ } from 'react-redux';
 import { GoogleApiWrapper, Map } from 'google-maps-react';
 
 import { setRestaurants, setRestaurant } from '../../redux/modules/restaurants';
