@@ -4,6 +4,7 @@ import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 import logo from '../../assets/logo.svg';
 import Image from '../../assets/no_image.png';
+import { Marker } from 'google-maps-react';
 
 import {
     Container,
@@ -116,7 +117,19 @@ const Home = () => {
                     )}
                 </Modal>
             </Container>
-            <Map query={query} placeId={placeId} />
+            <Map query={query} placeId={placeId}>
+                {restaurants.map((restaurant) => (
+                    <Marker
+                        onClick={() => handleOpenModal(restaurant.place_id)}
+                        key={restaurant.place_id}
+                        name={restaurant.name}
+                        position={{
+                            lat: restaurant.geometry.location.lat(),
+                            lng: restaurant.geometry.location.lng(),
+                        }}
+                    />
+                ))}
+            </Map>
         </Wrapper>
     );
 };

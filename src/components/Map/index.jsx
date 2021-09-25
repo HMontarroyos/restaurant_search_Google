@@ -82,29 +82,13 @@ export const MapContainer = (props) => {
         searchNearby(map, map.center);
     }
 
-    function onModal() {
-        return console.log('TESTE');
-    }
-
     return (
         <Map
             google={google}
             centerAroundCurrentLocation
             onReady={onMapReady}
             onRecenter={onMapReady}
-            {...props}>
-            {restaurants.map((restaurant) => (
-                <Marker
-                    onClick={onModal}
-                    key={restaurant.place_id}
-                    name={restaurant.name}
-                    position={{
-                        lat: restaurant.geometry.location.lat(),
-                        lng: restaurant.geometry.location.lng(),
-                    }}
-                />
-            ))}
-        </Map>
+            {...props}></Map>
     );
 };
 
