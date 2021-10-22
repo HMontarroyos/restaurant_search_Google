@@ -79,4 +79,7 @@ Após ter criado uma conta no Netilfy e só escolher aonde esta hospedado o seu 
 
 [Restaurant Food Search](https://restaurant-food-search.netlify.app/)
 
+![restaurante gif](https://user-images.githubusercontent.com/60220406/138523571-565b2f5c-9c5f-4c61-af41-733fd55fe05b.gif)
+
+
 ### 🚀 Let's code! 🚀
