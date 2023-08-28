@@ -151,14 +151,14 @@ Abrir [http://localhost:3000](http://localhost:3000) vizualizar no Navegador.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/HMontarroyos/Restaurant_Search_Google.svg?style=for-the-badge
-[contributors-url]: https://github.com/HMontarroyos/Restaurant_Search_Google/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/HMontarroyos/Restaurant_Search_Google.svg?style=for-the-badge
-[forks-url]: https://github.com/HMontarroyos/Restaurant_Search_Google/fork
-[stars-shield]: https://img.shields.io/github/stars/HMontarroyos/Restaurant_Search_Google.svg?style=for-the-badge
-[stars-url]: https://github.com/HMontarroyos/Restaurant_Search_Google/stargazers
-[issues-shield]: https://img.shields.io/github/issues/HMontarroyos/Restaurant_Search_Google.svg?style=for-the-badge
-[issues-url]: https://github.com/HMontarroyos/Restaurant_Search_Google/issues
+[contributors-shield]: https://img.shields.io/github/contributors/HMontarroyos/restaurant_search_Google.svg?style=for-the-badge
+[contributors-url]: https://github.com/HMontarroyos/restaurant_search_Google/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/HMontarroyos/restaurant_search_Google.svg?style=for-the-badge
+[forks-url]: https://github.com/HMontarroyos/restaurant_search_Google/fork
+[stars-shield]: https://img.shields.io/github/stars/HMontarroyos/restaurant_search_Google.svg?style=for-the-badge
+[stars-url]: https://github.com/HMontarroyos/restaurant_search_Google/stargazers
+[issues-shield]: https://img.shields.io/github/issues/HMontarroyos/restaurant_search_Google.svg?style=for-the-badge
+[issues-url]: https://github.com/HMontarroyos/restaurant_search_Google/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/hebertmontarroyos-developer/
 
